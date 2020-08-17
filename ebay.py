@@ -31,7 +31,7 @@ for x in range(index):
                 for h3 in tags_h3:
                     try:
                         if h3.attrs['class'][0]=='s-item__title':
-                            title=(h3.replace(",","")).text
+                            title=h3.text.replace(",","")
                     except:
                         title='NOTFOUND'
                         pass
@@ -51,7 +51,7 @@ for x in range(index):
                         pass
                 for span in tags_spans:
                     try:
-                        if span.attrs['class'][0]=='BOLD NEGATIVE':
+                        if span.attrs['class'][0]=='s-item__hotness':
                             sales=span.text
                     except:
                         sales='NOTFOUND'
